@@ -240,12 +240,16 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
     }
-    .stat { text-align: center; }
+    .stat {
+      text-align: center;
+      flex: 1;
+      padding: 8px 16px;
+      border-right: 1px solid var(--borda);
+    }
+    .stat:last-child { border-right: none; }
     .stat-num { font-size: 26px; font-weight: 900; color: var(--azul); letter-spacing: -0.5px; }
-    .stat-label { font-size: 12px; color: var(--cinza); margin-top: 2px; font-weight: 500; }
+    .stat-label { font-size: 12px; color: var(--cinza); margin-top: 4px; font-weight: 500; }
 
     /* SECTIONS */
     .sec {
@@ -521,8 +525,11 @@
       .hero-logo { width: 82px; height: 82px; }
       .hero-btns { max-width: 100%; }
 
-      .stats { padding: 24px 20px; }
-      .stats-inner { gap: 16px; }
+      .stats { padding: 20px; }
+      .stats-inner { flex-wrap: wrap; }
+      .stat { flex: 0 0 50%; border-right: none; padding: 14px 8px; }
+      .stat:nth-child(1), .stat:nth-child(3) { border-right: 1px solid var(--borda); }
+      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--borda); }
       .stat-num { font-size: 22px; }
 
       .sec { padding: 56px 20px; text-align: center; }
@@ -618,9 +625,9 @@
   <!-- STATS -->
   <div class="stats">
     <div class="stats-inner">
-      <div class="stat"><div class="stat-num">24h ⭐</div><div class="stat-label">Todos os dias do ano</div></div>
-      <div class="stat"><div class="stat-num">Hospital</div><div class="stat-label">Completo em um só lugar</div></div>
-      <div class="stat"><div class="stat-num">Pet Shop</div><div class="stat-label">Tudo para o seu pet</div></div>
+      <div class="stat"><div class="stat-num">24h</div><div class="stat-label">Todos os dias do ano</div></div>
+      <div class="stat"><div class="stat-num">Clínica</div><div class="stat-label">Completa em um só lugar</div></div>
+      <div class="stat"><div class="stat-num">+800</div><div class="stat-label">Pets atendidos</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Preço justo e transparente</div></div>
     </div>
   </div>
