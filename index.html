@@ -9,7 +9,6 @@
   <title>Mascote's – Clínica Veterinária 24h em Natal/RN</title>
   <meta name="description" content="Clínica Veterinária 24h em Natal/RN. Consultas, cirurgias, laboratório próprio, raio-x, ultrassom e muito mais. Atendimento imediato para seu pet." />
   <link rel="icon" type="image/webp" href="logo.webp" />
-  <link rel="preload" as="image" href="fachada.webp" fetchpriority="high" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -124,29 +123,9 @@
       justify-content: center;
       text-align: center;
       padding: 80px 24px 64px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-    .hero-bg img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(160deg, rgba(255,255,255,0.94) 0%, rgba(232,246,254,0.91) 100%);
-      z-index: 1;
+      background: linear-gradient(160deg, #ffffff 0%, #e8f6fe 100%);
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
       max-width: 600px;
       width: 100%;
       display: flex;
@@ -603,8 +582,6 @@
 
   <!-- HERO -->
   <div class="hero">
-    <div class="hero-bg"><img src="fachada.webp" alt="" fetchpriority="high" decoding="sync" /></div>
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-logo"><img src="logo.webp" alt="Mascote's" /></div>
       <p class="hero-clinica-tag">Mascote's</p>
@@ -629,6 +606,40 @@
       <div class="stat"><div class="stat-num">Clínica</div><div class="stat-label">Completa em um só lugar</div></div>
       <div class="stat"><div class="stat-num">+800</div><div class="stat-label">Pets atendidos</div></div>
       <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Preço justo e transparente</div></div>
+    </div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <div class="sec-depoi">
+    <div class="sec-depoi-inner">
+      <span class="sec-tag">O que dizem sobre nós</span>
+      <h2 class="sec-titulo" style="font-size:32px;">Natal <span style="color:var(--azul);">confia na Mascote's</span></h2>
+      <div class="carrossel-wrap">
+        <div class="carrossel-track" id="carrosselTrack">
+          <div class="carrossel-slide">
+            <div class="review-img-card"><img src="1.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
+          </div>
+          <div class="carrossel-slide">
+            <div class="review-img-card"><img src="2.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
+          </div>
+          <div class="carrossel-slide">
+            <div class="review-img-card"><img src="3.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
+          </div>
+          <div class="carrossel-slide">
+            <div class="review-img-card"><img src="4.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="carrossel-nav">
+          <button class="carrossel-btn" onclick="moverCarrossel(-1)" aria-label="Anterior">&#8592;</button>
+          <div class="carrossel-dots">
+            <div class="carrossel-dot ativo" onclick="irParaSlide(0)"></div>
+            <div class="carrossel-dot" onclick="irParaSlide(1)"></div>
+            <div class="carrossel-dot" onclick="irParaSlide(2)"></div>
+            <div class="carrossel-dot" onclick="irParaSlide(3)"></div>
+          </div>
+          <button class="carrossel-btn" onclick="moverCarrossel(1)" aria-label="Próximo">&#8594;</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -711,40 +722,6 @@
         <div class="motivo">
           <div class="motivo-num">04</div>
           <div><h4>Localização privilegiada em Natal</h4><p>Fácil acesso com estacionamento. Atende pacientes de toda a Grande Natal.</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- DEPOIMENTOS -->
-  <div class="sec-depoi">
-    <div class="sec-depoi-inner">
-      <span class="sec-tag">O que dizem sobre nós</span>
-      <h2 class="sec-titulo" style="font-size:32px;">Natal <span style="color:var(--azul);">confia na Mascote's</span></h2>
-      <div class="carrossel-wrap">
-        <div class="carrossel-track" id="carrosselTrack">
-          <div class="carrossel-slide">
-            <div class="review-img-card"><img src="1.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
-          </div>
-          <div class="carrossel-slide">
-            <div class="review-img-card"><img src="2.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
-          </div>
-          <div class="carrossel-slide">
-            <div class="review-img-card"><img src="3.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
-          </div>
-          <div class="carrossel-slide">
-            <div class="review-img-card"><img src="4.webp" alt="Avaliação 5 estrelas" loading="lazy" /></div>
-          </div>
-        </div>
-        <div class="carrossel-nav">
-          <button class="carrossel-btn" onclick="moverCarrossel(-1)" aria-label="Anterior">&#8592;</button>
-          <div class="carrossel-dots">
-            <div class="carrossel-dot ativo" onclick="irParaSlide(0)"></div>
-            <div class="carrossel-dot" onclick="irParaSlide(1)"></div>
-            <div class="carrossel-dot" onclick="irParaSlide(2)"></div>
-            <div class="carrossel-dot" onclick="irParaSlide(3)"></div>
-          </div>
-          <button class="carrossel-btn" onclick="moverCarrossel(1)" aria-label="Próximo">&#8594;</button>
         </div>
       </div>
     </div>
