@@ -126,30 +126,33 @@
       padding: 80px 24px 64px;
       position: relative;
       overflow: hidden;
-      background-color: #ffffff;
-      background-image:
-        radial-gradient(circle at 88% 12%, rgba(14,172,248,0.13) 0%, transparent 42%),
-        radial-gradient(circle at 12% 88%, rgba(252,206,12,0.11) 0%, transparent 40%),
-        radial-gradient(rgba(14,172,248,0.07) 1px, transparent 1px);
-      background-size: 100% 100%, 100% 100%, 26px 26px;
+      background:
+        radial-gradient(ellipse 70% 60% at 85% 15%, rgba(14,172,248,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 55% at 10% 80%, rgba(252,206,12,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 50% 50%, rgba(14,172,248,0.05) 0%, transparent 70%),
+        #fafeff;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -80px; right: -80px;
-      width: 440px; height: 440px;
-      border: 48px solid rgba(14,172,248,0.08);
-      border-radius: 50%;
+      top: -8%; right: -6%;
+      width: 58%; height: 72%;
+      background: rgba(14,172,248,0.13);
+      border-radius: 38% 62% 55% 45% / 48% 42% 58% 52%;
+      filter: blur(72px);
       pointer-events: none;
+      will-change: transform;
     }
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -60px; left: -60px;
-      width: 300px; height: 300px;
-      border: 36px solid rgba(252,206,12,0.13);
-      border-radius: 50%;
+      bottom: -6%; left: -4%;
+      width: 46%; height: 52%;
+      background: rgba(252,206,12,0.11);
+      border-radius: 58% 42% 36% 64% / 44% 58% 42% 56%;
+      filter: blur(64px);
       pointer-events: none;
+      will-change: transform;
     }
     .hero-content {
       position: relative;
@@ -541,9 +544,9 @@
       nav { padding: 12px 20px; }
       nav .nav-badge { display: none; }
 
-      .hero { padding: 72px 24px 56px; background-size: 100% 100%, 100% 100%, 22px 22px; }
-      .hero::before { width: 260px; height: 260px; top: -50px; right: -50px; border-width: 32px; }
-      .hero::after { width: 200px; height: 200px; bottom: -40px; left: -40px; border-width: 28px; }
+      .hero { padding: 72px 24px 56px; }
+      .hero::before { width: 70%; height: 50%; filter: blur(50px); }
+      .hero::after { width: 55%; height: 40%; filter: blur(44px); }
       .hero h1 { font-size: 40px; }
       .mobile-br { display: block; }
       .hero-logo { width: 96px; height: 96px; }
