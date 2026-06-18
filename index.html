@@ -124,25 +124,30 @@
       justify-content: center;
       text-align: center;
       padding: 80px 24px 64px;
-      background: #ffffff;
       position: relative;
       overflow: hidden;
+      background-color: #ffffff;
+      background-image:
+        radial-gradient(circle at 88% 12%, rgba(14,172,248,0.13) 0%, transparent 42%),
+        radial-gradient(circle at 12% 88%, rgba(252,206,12,0.11) 0%, transparent 40%),
+        radial-gradient(rgba(14,172,248,0.07) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 26px 26px;
     }
     .hero::before {
       content: '';
       position: absolute;
-      top: -120px; right: -120px;
-      width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(14,172,248,0.12) 0%, transparent 65%);
+      top: -80px; right: -80px;
+      width: 440px; height: 440px;
+      border: 48px solid rgba(14,172,248,0.08);
       border-radius: 50%;
       pointer-events: none;
     }
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -80px; left: -80px;
-      width: 380px; height: 380px;
-      background: radial-gradient(circle, rgba(252,206,12,0.1) 0%, transparent 65%);
+      bottom: -60px; left: -60px;
+      width: 300px; height: 300px;
+      border: 36px solid rgba(252,206,12,0.13);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -536,9 +541,9 @@
       nav { padding: 12px 20px; }
       nav .nav-badge { display: none; }
 
-      .hero { padding: 72px 24px 56px; }
-      .hero::before { width: 300px; height: 300px; top: -60px; right: -60px; }
-      .hero::after { width: 220px; height: 220px; }
+      .hero { padding: 72px 24px 56px; background-size: 100% 100%, 100% 100%, 22px 22px; }
+      .hero::before { width: 260px; height: 260px; top: -50px; right: -50px; border-width: 32px; }
+      .hero::after { width: 200px; height: 200px; bottom: -40px; left: -40px; border-width: 28px; }
       .hero h1 { font-size: 40px; }
       .mobile-br { display: block; }
       .hero-logo { width: 96px; height: 96px; }
