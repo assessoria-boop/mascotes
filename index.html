@@ -125,71 +125,91 @@
       text-align: center;
       padding: 80px 24px 64px;
       background: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(14,172,248,0.12) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(252,206,12,0.1) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
     }
     .hero-content {
-      max-width: 600px;
+      position: relative;
+      z-index: 1;
+      max-width: 580px;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     .hero-logo {
-      width: 100px; height: 100px;
+      width: 116px; height: 116px;
       border-radius: 50%;
       overflow: hidden;
-      margin: 0 auto 30px;
-      box-shadow: 0 8px 32px rgba(14,172,248,0.35);
+      margin: 0 auto 20px;
+      border: 4px solid var(--azul);
+      box-shadow: 0 0 0 8px rgba(14,172,248,0.12), 0 12px 40px rgba(14,172,248,0.25);
       background: var(--azul);
       flex-shrink: 0;
     }
     .hero-logo img { width: 100%; height: 100%; object-fit: cover; }
     .hero-clinica-tag {
-      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--azul);
-      letter-spacing: 3px;
+      background: var(--azul-suave);
+      border: 1px solid rgba(14,172,248,0.25);
+      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      border-radius: 999px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
     }
     .hero h1 {
-      font-size: 66px;
+      font-size: 62px;
       font-weight: 900;
       color: var(--texto);
       letter-spacing: -2px;
       line-height: 1.05;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
     }
     .hero h1 span { color: var(--azul); }
     .txt-red { color: var(--vermelho); }
     .mobile-br { display: none; }
     .hero-sub {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--cinza);
-      line-height: 1.6;
-      margin-bottom: 28px;
-      max-width: 420px;
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 380px;
     }
-    .hero-localizacao { margin-bottom: 34px; }
-    .loc-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: white;
-      border: 1.5px solid #dde4ed;
-      border-radius: 999px;
-      padding: 8px 18px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--texto);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    .loc-pill strong { color: var(--azul); }
     .hero-btns {
       display: flex;
       flex-direction: column;
       align-items: center;
       width: 100%;
       max-width: 400px;
+    }
+    @keyframes wpp-pulse {
+      0% { box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.4); }
+      70% { box-shadow: 0 4px 20px rgba(37,211,102,0.2), 0 0 0 12px rgba(37,211,102,0); }
+      100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0); }
     }
     .btn-wpp {
       display: inline-flex;
@@ -204,17 +224,22 @@
       border-radius: 999px;
       text-decoration: none;
       transition: all 0.2s;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+      animation: wpp-pulse 2.2s infinite;
       width: 100%;
     }
-    .btn-wpp:hover { background: var(--wpp-hover); transform: translateY(-2px); }
+    .btn-wpp:hover { background: var(--wpp-hover); transform: translateY(-2px); animation: none; }
     .btn-wpp svg { width: 22px; height: 22px; fill: white; flex-shrink: 0; }
     .hero-resposta {
-      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
       font-weight: 600;
-      color: var(--cinza);
-      margin-top: 10px;
-      letter-spacing: 0.2px;
+      color: #15803d;
+      background: #dcfce7;
+      border-radius: 999px;
+      padding: 5px 14px;
+      margin-top: 12px;
     }
 
     /* STATS */
@@ -511,10 +536,12 @@
       nav { padding: 12px 20px; }
       nav .nav-badge { display: none; }
 
-      .hero { padding: 64px 20px 52px; }
+      .hero { padding: 72px 24px 56px; }
+      .hero::before { width: 300px; height: 300px; top: -60px; right: -60px; }
+      .hero::after { width: 220px; height: 220px; }
       .hero h1 { font-size: 40px; }
       .mobile-br { display: block; }
-      .hero-logo { width: 82px; height: 82px; }
+      .hero-logo { width: 96px; height: 96px; }
       .hero-btns { max-width: 100%; }
 
       .stats { padding: 20px; }
